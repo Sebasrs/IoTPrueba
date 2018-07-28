@@ -1,0 +1,25 @@
+{
+  "name": "iotprueba",
+  "version": "1.0.0",
+  "description": "Primer IoT para tarea",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebasrs/IoTPrueba.git"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "Sebastian Rivera Soto - Roberto Calderon - Jean Pierre Monterrey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebasrs/IoTPrueba/issues"
+  },
+  "homepage": "https://github.com/Sebasrs/IoTPrueba#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
