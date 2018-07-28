@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
 var cons = require('consolidate');
+
 //////Librerias MQTT
 var mqtt = require('mqtt')
 var url = require('url');
@@ -29,7 +30,7 @@ app.get('/pruebamqtt/', function (req, res) {
     res.send(dato);
 });
 
-
+///Termina MQTT
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
