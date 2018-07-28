@@ -3,6 +3,33 @@ var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
 var cons = require('consolidate');
+//////Librerias MQTT
+var mqtt = require('mqtt')
+var url = require('url');
+const path = require('path')
+//Definiciones MQTT
+var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://localhost:1883');
+var client  = mqtt.connect(mqtt_url)
+var dato=""
+
+//Listener MQTT Client
+client.on('connect', function () {
+  client.subscribe('presence')
+  client.publish('presence', 'Hello mqtt')
+})
+
+client.on('message', function (topic, message) {
+  // message is Buffer
+  dato+=message.toString();
+  console.log(message.toString())
+ // client.end()
+})
+app.get('/pruebamqtt/', function (req, res) {
+    client.publish('presence', 'Hello mqtt')
+    res.send(dato);
+});
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
