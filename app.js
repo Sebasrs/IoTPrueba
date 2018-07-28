@@ -7,7 +7,6 @@ var cons = require('consolidate');
 //////Librerias MQTT
 var mqtt = require('mqtt')
 var url = require('url');
-const path = require('path')
 //Definiciones MQTT
 var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://localhost:1883');
 var client  = mqtt.connect(mqtt_url)
