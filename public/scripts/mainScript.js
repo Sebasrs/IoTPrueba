@@ -17,8 +17,7 @@ $('#selectors input').change(function(){
   $('div:nth-child('+ $(this).val() +')').animate({opacity : 1});
 });
 
-//
 //temperatura
-$.get("https://fcc-weather-api.glitch.me/api/current?lat=9.937542&lon=-84.061180", function(data, status){
-        $('#temperatura').html(data.main.temp);
-    });
+$.ajax({url: "https://fcc-weather-api.glitch.me/api/current?lat=9.937542&lon=-84.061180", success: function(result){
+  $('#temperatura').html(result.main.temp);
+}});
