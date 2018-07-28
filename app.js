@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
 var bodyParser = require("body-parser");
-var path    = require("path");
+var path = require("path");
 var cons = require('consolidate');
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -23,7 +24,15 @@ app.get('/fecha', function(req, res){
 
 app.post('/post', function(req, res){
   var reqBody = req.body;
-  res.redirect('/');
+
+  reqBody.T1 = reqBody.T1.slice(4,12).toUpperCase().charAt(3);
+  reqBody.T2 = reqBody.T2.slice(4,12).toUpperCase().charAt(3);
+  reqBody.T3 = reqBody.T3.slice(4,12).toUpperCase().charAt(3);
+  reqBody.T4 = reqBody.T4.slice(4,12).toUpperCase().charAt(3);
+
+  console.log(reqBody);
+
+  res.send(reqBody);
 });
 
 app.listen(PORT, function(){
