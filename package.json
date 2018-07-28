@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Sebasrs/IoTPrueba#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "consolidate": "^0.15.1",
+    "express": "^4.16.3",
+    "swig": "^1.4.2"
   }
 }
