@@ -15,6 +15,15 @@ const PORT = process.env.PORT || 5000;
 
 app.get('/', function(req, res){
   res.render('index');
+});;
+
+app.get('/fecha', function(req, res){
+  res.send(new Date());
+});
+
+app.post('/post', function(req, res){
+  var reqBody = req.body;
+  res.redirect('/');
 });
 
 app.listen(PORT, function(){
