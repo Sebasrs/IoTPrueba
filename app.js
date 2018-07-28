@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 });;
 
 app.get('/fecha', function(req, res){
-  res.send(new Date());
+  res.send(new Date() + '<br><a href="/">Volver</a>');
 });
 
 app.post('/post', function(req, res){
