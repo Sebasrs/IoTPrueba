@@ -1,7 +1,21 @@
+function isValid(email){
+  var emailRegularExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(email.match(mailformat)){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 $('div:nth-child(2) input').change(function(){
   console.log();
   if($(this).val() === ''){
     alert('El area esta vacia');
+  }
+  console.log($('input[type="email"]').val());
+  if(!isValid($('input[type="email"]').val())){
+    alert('El formato del correo esta mal');
   }
 });
 
