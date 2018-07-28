@@ -1,6 +1,6 @@
 function isValid(email){
   var emailRegularExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if(email.match(mailformat)){
+  if(email.match(emailRegularExpression)){
     return true;
   }
   else{
