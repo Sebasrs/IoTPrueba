@@ -13,11 +13,16 @@ $('div:nth-child(2) input').change(function(){
   if($(this).val() === ''){
     alert('El area esta vacia');
   }
-  console.log($('input[type="email"]').val());
+});
+
+$('input[type="email"]').change(function(){
   if(!isValid($('input[type="email"]').val())){
     alert('El formato del correo esta mal');
   }
 });
+
+
+
 
 $('div:nth-child(2) textarea').change(function(){
   console.log($(this).val());
