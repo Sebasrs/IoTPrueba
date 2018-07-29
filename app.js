@@ -24,9 +24,9 @@ client.on('message', function (topic, message) {
   console.log(message.toString())
  // client.end()
 })
-app.get('/pruebamqtt/', function (req, res) {
+app.get('/pruebamqtt', function (req, res) {
     client.publish('presence', 'Hello mqtt')
-    res.send(dato);
+    res.send(dato + '<br><a href="/">Volver</a>');
 });
 
 ///Termina MQTT
