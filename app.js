@@ -45,6 +45,10 @@ app.get('/', function(req, res){
   res.render('index');
 });;
 
+app.get('/visualizacion', function(req, res){
+  res.render('graficos');
+});;
+
 app.get('/fecha', function(req, res){
   res.send(new Date() + '<br><a href="/">Volver</a>');
 });
