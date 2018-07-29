@@ -50,6 +50,7 @@ app.get('/visualizacion', function(req, res){
 });;
 
 app.get('/fecha', function(req, res){
+  // Crea una nueva fecha y la envia
   res.send(new Date() + '<br><a href="/">Volver</a>');
 });
 
